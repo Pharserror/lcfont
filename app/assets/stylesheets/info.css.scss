@@ -1,0 +1,190 @@
+// Place all the styles related to the info controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#search_results {
+	height:327px;
+	overflow-y:auto;
+	-webkit-mask-image: -webkit-gradient(linear, left 80%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+#searchbox {
+	/*margin-top:327px;*/
+	margin-left:auto;
+	margin-right:auto;
+	width:777px;
+	height:99px;
+	border-radius:7px;
+	border:7px solid #6A6A6A;
+}
+#search_btn_wrapper {
+	margin-left:610px;
+	margin-top:11px;
+	#search_btn {
+		position:absolute;
+		z-index:1;
+		width:110px;
+		height:77px;
+		border-radius:7px;
+		border-bottom:3px solid #000;
+		background-color:#6A6A6A;
+		background-image:url('magglass.png');
+		background-repeat:no-repeat;
+		background-position:center center;
+		&:hover {
+			background-image:url('magglass_hilite.png');
+		}
+	}
+	.search_dropdown {
+		position:absolute;
+		margin-left:33px;
+		z-index:0;
+		width:110px;
+		height:77px;
+		border-top-left-radius:7px;
+		border-top-right-radius:7px;
+		border-bottom-left-radius:7px;
+		border-bottom-right-radius:0px;
+		background-color:#2C2C2C;
+		background-image:url('uparrow.png');
+		background-repeat:no-repeat;
+		background-position:center right;
+		&:hover {
+			background-image:url('uparrow_hilite.png');
+		}
+		&.inactive_search_dropdown {
+			border-bottom-right-radius:7px;
+			background-image:url('downarrow.png');
+			&:hover {
+				background-image:url('downarrow_hilite.png');
+			}
+		}
+	}
+	#advanced_search_wrapper {
+		display:none;
+		width:743px;
+		height:121px;
+		background-color:black;
+		border-radius:7px;
+		border-top-right-radius:0px;
+		float:right;
+		margin-top:77px;
+		margin-right:24px;
+		#cant_find_wrapper {
+			padding-top:33px;
+			display:none;
+	    width: 743px;
+	    background-color: #6A6A6A;
+	    border-radius: 7px;
+			table {
+		    margin-left: auto;
+		    margin-right: auto;
+				th {
+					font-size:36px;
+					padding-right:36px;
+					a {
+						text-decoration:none;
+					}
+				}
+				td {
+					font-size:16px;
+					padding-top:7px;
+				}
+			}
+		}
+		#cant_find_dropdown {
+	    margin-left: 633px;
+	    z-index: 0;
+	    height: 40px;
+	    background-color: black;
+	    background-image: url('uparrow_black.png');
+			border-top-right-radius:0px;
+			border-bottom-right-radius:7px;
+			&:hover {
+				background-image: url('uparrow_black_hilite.png');
+			}
+			&.inactive_cant_find_dropdown {
+				background-image: url('downarrow_black.png');
+				&:hover {
+					background-image: url('downarrow_black_hilite.png');
+				}
+			}
+		}
+		#advanced_search_options_wrapper {
+			width:743px;
+			height:77px;
+			background-color:#2C2C2C;
+			border-radius:7px 0px 7px 7px;
+			#advanced_search_options {
+				z-index:1;
+				width:683px;
+				height:43px;
+				background-color:#6A6A6A;
+				margin-left:22px;
+				margin-top:17px;
+				position:absolute;
+				padding-left:5px;
+				border-radius:7px;
+				h3 {
+					text-align:left;
+					float:left;
+				}
+				button {
+					color:black;
+					background-color:#CCCCCC;
+					border-bottom:3px solid #959595;
+					height:43px;
+					font-weight:bold;
+					&:hover {
+						color:white;
+					}
+					input {
+						float:left;
+						margin-right:3px;
+					}
+				}
+				#advanced_search_options_inner {
+					float:right;
+					width:565px;
+					height:43px;
+					background-color:white;
+					border-radius:7px;
+				}
+			}
+			.search_dropdown {
+				z-index:0;
+				margin-left:633px;
+			}
+		}
+		h3 {
+			color:white;
+			text-align:center;
+		}
+	}
+}
+#analysis_search {
+	float: left;
+	margin-left:20px;
+	width:550px;
+	height:56px;
+	font-size:36px;
+	line-height:56px;
+}
+.ui-helper-hidden-accessible {
+	/*clear:left;
+	float:left;
+	margin-top: -175px;
+  height: 36px;
+  font-size: 24px;
+  line-height: 36px;
+  width: 100%;
+  margin-left: 0px;
+  text-align: center;*/
+	display:none;
+}
+#logo {
+	float:left;
+	margin-right:96px;
+}
+#contact_info {
+	background-repeat:no-repeat;
+	background-position:center center;
+}

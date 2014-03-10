@@ -1,0 +1,31 @@
+<h1 style="clear:both">Search Results</h1>
+<% unless @analyses.blank? %>
+	<table class="table table-bordered table-hover">
+	  <tr class="pallette-emerald">
+	    <th>Name</th>
+	    <th>Description</th>
+	    <th>Instrument</th>
+	    <!--<th>Cost</th>-->
+	    <th>Astm</th>
+	    <th>Volume Required</th>
+	    <th>Limits and Units</th>
+	    <th>Turnaround Time</th>
+	  </tr>
+	  <tbody>
+	  <% @analyses.each do |analysis| %>
+    	<tr>
+	      <td><%= analysis.name unless analysis.name.nil? %></td>
+	      <td><%= analysis.desc unless analysis.desc.nil? %></td>
+	      <td><%= analysis.instrument unless analysis.instrument.nil? %></td>
+	      <!--<td><%#= number_to_currency(analysis.cost, :locale => :us) unless analysis.cost.nil? %></td>-->
+	      <td><%= analysis.astm unless analysis.astm.nil? %></td>
+	      <td><%= analysis.volumerequired unless analysis.volumerequired.nil? %>
+	      <td><%= analysis.limit unless analysis.limit.nil? %>&nbsp;<%#= analysis.unit unless analysis.unit == "n/a" %>
+	      <td><%= analysis.turnaround.to_hours unless analysis.turnaround.nil? %></td>
+	    </tr>
+	  <% end %>
+	  </tbody>
+	</table>
+<% else %>
+	<h2>No Results Found</h2>
+<% end %>

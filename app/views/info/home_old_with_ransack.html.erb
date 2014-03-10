@@ -1,0 +1,51 @@
+<%= image_tag "lcmbanner.png" %>
+<div id="searchbox">
+	<%= form_tag "/analyses/search_suggestions", :id => "search_form", :remote => true %>
+		<%= text_field_tag 'analysis_search', nil, :id => 'analysis_search', "data-autocomplete-source" => analyses_path(:json) %>
+		<%= hidden_field_tag 'selected_analysis', nil, :id => 'selected_analysis' %>
+		<div id="search_btn_wrapper">
+			<button type="button" id="search_btn" class="btn"></button>
+			<button type="button" id="search_dropdown" class="btn search_dropdown inactive_search_dropdown"></button>
+			<div id="advanced_search_wrapper">
+				<div id="advanced_search_options_wrapper">
+					<div id="advanced_search_options">
+						<h3>Search By</h3>
+						<div id="advanced_search_options_inner">
+							<button type="button" class="btn advanced_search_option_btn"><%= check_box_tag 'astm' %>ASTM</button>
+							<button type="button" class="btn advanced_search_option_btn"><%= check_box_tag 'keyword' %>Keyword</button>
+							<button type="button" class="btn advanced_search_option_btn"><%= check_box_tag 'name' %>Name</button>
+							<button type="button" class="btn advanced_search_option_btn"><%= check_box_tag 'price' %>Price</button>
+						</div>
+					</div>
+					</form>
+					<button type="button" id="ransack_search_dropdown" class="btn search_dropdown inactive_search_dropdown"></button>
+				</div>
+				<div id="ransack_search_options_header">
+					<h3>Refine Search</h3>
+				</div>
+				<div id="ransack_search_options_wrapper">
+					<div id="ransack_search_options">
+						<%= search_form_for @search, url: search_analyses_path, :id => "ransack_search_form", method: :post, :remote => true do |f| %>
+				      <%= f.condition_fields do |c| %>
+				        <%= render "condition_fields", f: c %>
+				      <% end %>
+				      <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+				      <div class="field">
+				        Sort:
+				        <%= f.sort_fields do |s| %>
+				          <%= s.sort_select %>
+				        <% end %>
+				      </div>
+							<button type="button" id="ransack_search_btn" class="btn">Search</button>
+				    <% end %>
+					</div>
+				</div>
+				<h3 style="margin-top:0px;background-color:black;border-radius: 0px 0px 7px 7px;z-index:1;position:absolute;width:710px;float:left;">
+					Can't Find What You Were Looking For?
+				</h3>
+				<button type="button" id="cant_find_dropdown" class="btn search_dropdown inactive_search_dropdown"></button>
+				<div id="cant_find_wrapper"></div>
+			</div>
+		</div>
+</div>
+<div id="search_results"></div>

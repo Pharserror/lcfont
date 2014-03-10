@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+@import "compass_twitter_bootstrap";
+@import "flat-ui";
+body {
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.container img.carousel-image {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:90%;
+}
+div.btn-group {
+  display: block;
+  width:90%;
+  margin-left:auto;
+}
+body div.thumbnail-row {
+  margin-top:10px;
+}
+.thumbnail-row {
+  div.span4 {
+    width:98%;
+  }
+}
+#header {
+  border-top: 6px solid #80A0B7;
+  background-color:#32556E;
+  #logo {
+    width:128px;
+    float:left;
+  }
+  #banner {
+    margin-left:128px;
+    h1 {
+      color:#FFF;
+      margin:20px;
+    }
+  }
+  .options-header {
+    background-color:#80A0B7;
+    border-top:6px solid #16a085;
+    margin-bottom:14px;
+    .container {
+      width:15%;
+      margin-left:0px;
+      padding-left:14px;
+      h3 {
+        color:white;
+        text-shadow:0 2px 0 rgba(0, 0, 0, 0.25);
+      }
+      ul {
+        list-style-type:none;
+        margin-left:0px;
+        li {
+          margin-top:4px;
+          color:black;
+          text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);
+          background-color:#FFED40;
+          border-top-left-radius:4px;
+          border-bottom-left-radius:4px;
+          padding-left:14px;
+        }
+      }
+      &.first {
+        background-color:#FFD300;
+        border-bottom:6px solid #A66F00;
+      }
+      &.second {
+        background-color:#FF7400;
+        border-bottom:6px solid #A64B00;
+      }
+      &.third {
+        background-color:#FF0000;
+        border-bottom:6px solid #A60000;
+      }
+    }
+  }
+}
+.navbar {
+  margin-bottom:0px;
+	.navbar-inner {
+		.nav {
+			li.active {
+				a {
+					border-radius:0px 0px 7px 7px;
+					border-bottom:3px solid #B3B3B3;
+				}
+			}
+		}
+	}
+}
+#sitemap {
+	width:600px;
+	margin-left:auto;
+}
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  li {
+    background-color: #FFF;
+    border-top: solid 1px #DDD;
+    margin: 0;
+    padding: 0;
+    a {
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+    a.ui-state-hover, a.ui-state-active {
+      background-color: #FFFCB2;
+    }
+  }
+}
+a.btn {
+	border-bottom:3px solid #11273D;
+}
+a.btn-primary {
+	border-bottom:3px solid #16A085;
+}

@@ -1,0 +1,70 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Lab/Cor Materials</a>
+    <ul class="nav">
+      <li><%= link_to "Home", root_url %></li>
+      <li class="active"><%= link_to "Testing", analyses_path %></li>
+      <!--<li><%#= link_to "Consulting", consultants_path %></li>-->
+      <li><%= link_to "About", info_about_path %></li>
+			<li><%= link_to "Locate", info_locate_path %></li>
+      <li><%= link_to "Contact", info_contact_path %></li>
+    </ul>
+    <!--<form class="navbar-search pull-right">
+      <input type="text" class="search-query" placeholder="Search">
+    </form>-->
+  </div>
+</div>
+<div id="analyses_carousel" class="carousel slide">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">
+      <%= image_tag("photos/hplc.jpg") %>
+      <div class="carousel-caption">
+        <h4>HPLC Testing</h4>
+        <p>The Hitatchi L-4000 UV Detector with L-6200A Intelligent Pump and Waters 474 Scanning Fluorescence Detector yields no exceptions when it comes to accurate results.</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag("photos/xrf.jpg") %>
+      <div class="carousel-caption">
+        <h4>XRF Analysis</h4>
+        <p>XRF analysis is accurate, precice, and quick with the Amp-Tek 1-2-3 SDD X-Ray Spectrometer.</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag("photos/ftir.jpg") %>
+      <div class="carousel-caption">
+        <h4>FT-IR Analysis</h4>
+        <p>FT-IR is carried out with Thermo's Nicolet 380 with ATR. Spectra are compared against Lab/Cor's extensive library.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#analyses_carousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#analyses_carousel" data-slide="next">&rsaquo;</a>
+</div>
+<ul class="nav nav-tabs">
+  <li><%= link_to "All Tests", analyses_path %></li>
+  <li class="active"><%= link_to "Testing Packages", packages_path %></li>
+</ul>
+<ul class="breadcrumb">
+  <li class="active">All Testing Packages <span class="divider">/</span></li>
+  <% @packages.each do |package| %>
+    <li><%= link_to package.name, package %><span class="divider">/</span></li>
+  <% end %>
+</ul>
+<% @packages.each do |package| %>
+  <div class="row thumbnail-row">
+    <div class="span12" style="width:100%;">
+      <div class="thumbnail">
+        <%= image_tag("photos/benchandhood.jpg", :size => "520x360") %>
+        <div class="caption">
+          <h3><%= package.name %></h3>
+          <p><%= package.desc %></p>
+          <%= link_to "Learn More", package, :class => "btn btn-primary" %> 
+          <%#= link_to "Get a Quote", package, :class => "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

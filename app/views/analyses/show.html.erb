@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @analysis.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @analysis.desc %>
+</p>
+
+<p>
+  <b>Instrument:</b>
+  <%= @analysis.instrument %>
+</p>
+
+<!--<p>
+  <b>Cost:</b>
+  <%#= @analysis.cost %>
+</p>-->
+
+<p>
+  <b>Astm:</b>
+  <%= @analysis.astm %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= @analysis.photo %>
+</p>
+
+<p>
+  <b>Turnaround:</b>
+  <%= @analysis.turnaround %>
+</p>
+
+
+<%= link_to 'Edit', edit_analysis_path(@analysis) %> |
+<%= link_to 'Back', analyses_path %>

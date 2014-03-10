@@ -1,0 +1,27 @@
+<h1 style="clear:both">Search Results</h1>
+<table class="table table-striped table-bordered table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Instrument</th>
+    <th>Cost</th>
+    <th>Astm</th>
+    <th>Volume Required</th>
+    <th>Limits and Units</th>
+    <th>Turnaround Time</th>
+  </tr>
+  <tbody>
+  <% @analyses.each do |analysis| %>
+    <tr>
+      <td><%= analysis.name %></td>
+      <td><%= analysis.desc %></td>
+      <td><%= analysis.instrument %></td>
+      <td><%= number_to_currency(analysis.cost, :locale => :us) %></td>
+      <td><%= analysis.astm %></td>
+      <td><%= analysis.volumerequired %>
+      <td><%= analysis.limit %>&nbsp;<%= analysis.unit unless analysis.unit == "n/a" %>
+      <td><%= analysis.turnaround %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
