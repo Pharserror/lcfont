@@ -5,7 +5,7 @@ This was a production front-end website for Lab/Cor Materials, LLC until it was 
 All of the vector graphics and images were hand-made via Photoshop by myself.
 
 Front Page
-![Front-Page](http://i.imgur.com/g7i3wqz.png)
+![Front Page](http://i.imgur.com/g7i3wqz.png)
 
 Searching for Analyses with AutoSuggest
 ![AutoSuggest](http://i.imgur.com/sXVGcC8.png)
